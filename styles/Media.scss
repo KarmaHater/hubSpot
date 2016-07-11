@@ -1,0 +1,42 @@
+.medias-container {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.media- {
+
+    &container {
+        width: 30.333%;
+        max-width: 760px;
+        margin: 0 auto;
+        display: inline-block;
+        padding: 1%;
+    }
+    
+    &container-description {
+
+    }
+
+    &image {
+        width: 100%;
+    }
+
+    &title {
+        font-weight: bold;
+    }
+
+    &year {
+
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .media- {
+
+        &container {
+              width: 100%;
+        }
+    }
+}
+    

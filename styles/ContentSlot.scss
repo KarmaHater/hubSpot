@@ -1,0 +1,46 @@
+$headline-color: #1E90FF;
+$first-content-color: #e5e5ff;
+$second-content-color: #1d2c4c;
+$main-text-color: white;
+$secondary-text-color: #808080;
+
+
+.slot- {
+    &container-one {
+        color: $secondary-text-color;
+        background-color: $first-content-color;
+        margin: 20px 0;
+        padding: 20px 0;
+        text-align: center;
+        height: 150px;
+    }
+
+    &container-two {
+        color: $main-text-color;
+        background-color: $second-content-color;
+        margin: 20px 0;
+        padding: 20px 0;
+        text-align: center;
+        height: 150px;
+        position: relative;
+    }
+
+    &content-text {
+        width: 50%;
+        float: left;
+        margin-left: 15%;
+        top: 50%;
+        transform: translateY(-50%);
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .slot- {
+        &content-text {
+            width: 90%;
+            float: none;
+            margin: 0 5%;
+        }
+    }
+}
