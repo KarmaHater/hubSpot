@@ -25,7 +25,7 @@ export class DropDownFilterContainer extends React.Component {
         })
         return (
             <div className='dropdown'>
-                <div>{filterType}</div>
+                <div>{filterType} v</div>
                 <div className='dropdown-content'>
                     {filtersComponents}
                 </div>

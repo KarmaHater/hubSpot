@@ -25,8 +25,8 @@ export class DropDownFilter extends React.Component {
 
         return (
             <div>
-                <label>{text}</label>
                 <input type='checkbox' value={text} ref={text} onClick={this.onClick}/>
+                <label>{text}</label>
             </div>
         )
     }

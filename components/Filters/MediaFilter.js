@@ -24,8 +24,8 @@ export class MediaFilter extends React.Component {
 
         return (
         	<div>
+                <input ref={filterType} type="checkbox" value={filterType} ref={filterType} onClick={this.onClick}/> 
                 <lable>{filterType}</lable>
-        		<input ref={filterType} type="checkbox" value={filterType} ref={filterType} onClick={this.onClick}/> 
         	</div>
         )
     }
