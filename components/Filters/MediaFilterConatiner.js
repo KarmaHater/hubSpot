@@ -2,7 +2,7 @@ import React from 'react'
 import MediaFilter from './MediaFilter'
 import Classnames from 'classnames';
 
-export class MediaContainer extends React.Component {
+export default class MediaContainer extends React.Component {
 
     static propTypes = {
         filterType: React.PropTypes.string.isRequired
@@ -20,5 +20,3 @@ export class MediaContainer extends React.Component {
         )
     }
 }
-
-export default MediaContainer

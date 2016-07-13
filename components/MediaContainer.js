@@ -8,7 +8,7 @@ function renderMovies (medias) {
     })
 }
 
-export class MediasContainer extends React.Component {
+export default class MediasContainer extends React.Component {
 
     static propTypes = {
         medias: React.PropTypes.array.isRequired,
@@ -34,5 +34,3 @@ export class MediasContainer extends React.Component {
         )
     }
 }
-
-export default MediasContainer;

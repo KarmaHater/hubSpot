@@ -3,7 +3,7 @@ import DropDownFilter from './DropDownFilter';
 import Classnames from 'classnames';
 import './../../styles/DropDownFilter.scss';
 
-export class DropDownFilterContainer extends React.Component {
+export default class DropDownFilterContainer extends React.Component {
     static propTypes = {
         filters: React.PropTypes.array.isRequired,
         filterType: React.PropTypes.string.isRequired
@@ -33,5 +33,3 @@ export class DropDownFilterContainer extends React.Component {
         )
     }
 }
-
-export default DropDownFilterContainer

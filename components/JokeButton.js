@@ -1,7 +1,7 @@
 import React from 'react';
 import './../styles/JokeButton.scss';
 
-export class JokeButton extends React.Component {
+export default class JokeButton extends React.Component {
 
     static propTypes = {
         handleClick: React.PropTypes.func
@@ -19,6 +19,3 @@ export class JokeButton extends React.Component {
         )
     }
 }
-
-export default JokeButton
-

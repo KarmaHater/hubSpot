@@ -2,7 +2,7 @@ import React from 'react'
 
 import './../styles/Media.scss';
 
-export class Media extends React.Component {
+export default class Media extends React.Component {
 
     static propTypes = {
         title: React.PropTypes.string,
@@ -42,5 +42,3 @@ export class Media extends React.Component {
         )
     }
 }
-
-export default Media

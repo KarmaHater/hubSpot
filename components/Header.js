@@ -2,7 +2,7 @@ import React from 'react'
 
 import './../styles/Header.scss';
 
-export class Header extends React.Component {
+export default class Header extends React.Component {
 
 	static propTypes = {
 	    headline: React.PropTypes.string.isRequired
@@ -16,5 +16,3 @@ export class Header extends React.Component {
 		)
 	}
 }
-
-export default Header

@@ -3,7 +3,7 @@ import JokeButton from './JokeButton.js';
 import Classnames from 'classnames';
 import './../styles/ContentSlot.scss';
 
-export class ContentSlot extends React.Component {
+export default class ContentSlot extends React.Component {
 
     static propTypes = {
         content: React.PropTypes.string.isRequired,
@@ -32,5 +32,3 @@ export class ContentSlot extends React.Component {
         )
     }
 }
-
-export default ContentSlot
