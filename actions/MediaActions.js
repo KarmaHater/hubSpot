@@ -14,3 +14,10 @@ export function filterMedia(filter) {
         data: filter
 	};	
 }
+
+export function searchMedia(value) {
+	return {
+	    type: Constants.SEARCH_MEDIA,
+        data: value
+	};	
+}

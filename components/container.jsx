@@ -10,9 +10,19 @@ import MediaContainer from './MediaContainer.js';
 import ContentSlot from './ContentSlot.js';
 import DropDownFilterContainer from './Filters/DropDownFilterContainer.js';
 import MediaFilterContainer from './Filters/MediaFilterConatiner.js';
+import SearchFilter from './Filters/SearchFilter.js';
 
 class Container extends Component {
     render() {
+        const {
+          genres,
+          medias,
+          mediaActions,
+          joke,
+          jokeActions,
+          years
+        } = this.props;
+
         return (
             <div>
                 <Header headline={"Exercise - Testimonial Block"}/>
@@ -20,25 +30,28 @@ class Container extends Component {
                              showLink={false}/>
 
                 <Header headline={"Exercise - CTA Quote"}/>
-                <ContentSlot content={this.props.joke}
-                             actions={this.props.jokeActions}  
+                <ContentSlot content={joke}
+                             actions={jokeActions}  
                              showLink={true}/>
-                <DropDownFilterContainer filters={this.props.geners}
-                                         filterType={'geners'}
-                                         actions={this.props.mediaActions} />
 
-                <DropDownFilterContainer filters={this.props.years}
+                <SearchFilter actions={mediaActions}/>
+
+                <DropDownFilterContainer filters={genres}
+                                         filterType={'genres'}
+                                         actions={mediaActions} />
+
+                <DropDownFilterContainer filters={years}
                                          filterType={'years'}
-                                         actions={this.props.mediaActions} />                         
+                                         actions={mediaActions} />                         
 
                 <MediaFilterContainer filterType={'book'}
-                                      actions={this.props.mediaActions}/>
+                                      actions={mediaActions}/>
 
                 <MediaFilterContainer filterType={'movie'}
-                                      actions={this.props.mediaActions}/>
+                                      actions={mediaActions}/>
 
-                <MediaContainer medias={this.props.medias}
-                                actions={this.props.mediaActions}/>
+                <MediaContainer medias={medias}
+                                actions={mediaActions}/>
             </div>
         );
     }
@@ -48,7 +61,7 @@ function mapStateToProps(state) {
     return {
         medias: state.medias.medias,
         joke: state.joke.joke,
-        geners: state.medias.geners,
+        genres: state.medias.genres,
         years: state.medias.years
     };
 }
