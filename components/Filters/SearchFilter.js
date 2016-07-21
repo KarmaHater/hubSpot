@@ -4,9 +4,19 @@ import './../../styles/SearchFilter.scss';
 
 export default class SearchFilter extends React.Component {
 
+    uncheckAll(){ 
+          var w = document.getElementsByTagName('input'); 
+          for(var i = 0; i < w.length; i++){ 
+            if(w[i].type=='checkbox'){ 
+              w[i].checked = false; 
+            }
+          }
+    } 
+
     onChange = () => {
         let value = this.refs.text.value;
         this.props.actions.searchMedia(value);
+        this.uncheckAll()
     }
 
     render() {

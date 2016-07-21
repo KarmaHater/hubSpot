@@ -8,7 +8,17 @@ export default class DropDownFilter extends React.Component {
 		text: React.PropTypes.string.isRequired
 	}
 
+    unClear(){ 
+        var w = document.getElementsByTagName('input'); 
+        for(var i = 0; i < w.length; i++){ 
+            if(w[i].type=='text'){ 
+                w[i].value= ''; 
+            }
+        }
+    } 
+
     onClick = () => {
+        this.unClear();
         const filter = {
             value: this.refs[this.props.text].value,
             checked: this.refs[this.props.text].checked

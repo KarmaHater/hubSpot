@@ -1,42 +1,36 @@
 export default class Filter {
-    static updateFilters (filters, filter, allMedias) {
+    static setFilters (filters, filter, allMedias) {
         if (filter.checked === true) {
-            return filters.concat([filter.value])
+            return filters.concat([filter.value]);
         } else {
-           _.remove(filters, function(f) {
-              return f === filter.value;
-            });
+           _.remove(filters, (f) => f === filter.value);
            return filters;
         }
     }
 
-    static updateMedias (filters, medias) {
+    static setMedias (filters, medias) {
         var newMedias = medias;
 
         if (filters.length === 0) {
             return medias;
         }
 
-        //filter by media
-        const mediaFilters = filters.filter(function(f) {
+        //filter by type
+        const mediaFilters = filters.filter((f) => {
             return f === 'book' || f === 'movie';
-        }.bind(this))
+        })
 
         var newMedias = updateMedia(filterTypeYear, mediaFilters, newMedias, 'type');
 
         //filter by year
-        const yearFilters = filters.filter(function(f) {
-            return /^\d+$/.test(f)
-        })
+        const yearFilters = filters.filter((f) => /^\d+$/.test(f));
 
         var newMedias = updateMedia(filterTypeYear, yearFilters, newMedias, 'year');
 
         // //filter by genre
-        const genreFilters = filters.filter(function(f) {
-            return !/^\d+$/.test(f) && f !== 'book' && f !== 'movie';
-        })
+        const genreFilters = filters.filter((f) => !/^\d+$/.test(f) && f !== 'book' && f !== 'movie');
 
-        const genres = filterGenre(genreFilters, newMedias)
+        const genres = filterGenre(genreFilters, newMedias);
         newMedias = [];
         newMedias.push(genres);
 
@@ -54,7 +48,7 @@ export function filterTypeYear(filters, medias, type) {
             }
         }
     }
-    return mediaResults
+    return mediaResults;
 }
 
 export function filterGenre(filters, medias) {
@@ -73,7 +67,7 @@ export function filterGenre(filters, medias) {
                 }
             }
         }
-        return genreResults
+        return genreResults;
     } else {
         return medias;
     }

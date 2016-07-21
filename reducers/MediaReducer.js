@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import * as Constants from './../constants/Constants.js';
-import Filter from './utils/filterMedias.js';
-import { fetchMovieGenres, fetchMovieYears } from './utils/loadMedias.js';
-import { setSearchMedias } from './utils/searchMedias.js';
+import Filter from './utils/Filter.js';
+import LoadMedia from './utils/LoadMedia.js';
+import Search from './utils/Search.js';
 
 const initialState = {
     medias: [],
@@ -17,8 +17,8 @@ export default (state = initialState, action) => {
     switch(action.type) {
         case Constants.LOAD_MEDIAS:
             const medias = action.movies;
-            const genres = fetchMovieGenres(medias);
-            const years = fetchMovieYears(medias);
+            const genres = LoadMedia.genres(medias);
+            const years = LoadMedia.years(medias);
             const allMedias = medias;
             return {
                 ...state,
@@ -29,8 +29,8 @@ export default (state = initialState, action) => {
             };
             break;
         case Constants.FILTER_MEDIA:
-            const filters = Filter.updateFilters(state.filters, action.data);
-            const filterMedies = Filter.updateMedias(filters, state.allMedias);
+            const filters = Filter.setFilters(state.filters, action.data);
+            const filterMedies = Filter.setMedias(filters, state.allMedias);
             return {
                 ...state,
                 medias: filterMedies,
@@ -38,15 +38,13 @@ export default (state = initialState, action) => {
             };
             break;
         case Constants.SEARCH_MEDIA:
-            let searchMedias = setSearchMedias(action.data, allMedias)
-
+            let searchMedias = Search.setMedias(action.data, state.allMedias);
             return {
                 ...state,
                 medias: searchMedias,
                 searchFilter: action.data
             };
             break;
-
         default:
         return state;
     }
