@@ -1,8 +1,8 @@
-import * as Constants from './../constants/Constants.js';
-import { updateFilters, filterMedia, filterGenre, setAllVisibleMedia, setAllVisibleMedies } from './utils/filterMedias.js';
-import { fetchMovieGenres, fetchMovieYears } from './utils/loadMedias.js';
-import { SearchFilter } from './utils/searchMedias.js';
 import _ from 'lodash';
+import * as Constants from './../constants/Constants.js';
+import Filter from './utils/filterMedias.js';
+import { fetchMovieGenres, fetchMovieYears } from './utils/loadMedias.js';
+import { setSearchMedias } from './utils/searchMedias.js';
 
 const initialState = {
     medias: [],
@@ -29,8 +29,8 @@ export default (state = initialState, action) => {
             };
             break;
         case Constants.FILTER_MEDIA:
-            const filters = updateFilters(state.filters, action.data);
-            const filterMedies = setAllVisibleMedies(filters, state.allMedias);
+            const filters = Filter.updateFilters(state.filters, action.data);
+            const filterMedies = Filter.updateMedias(filters, state.allMedias);
             return {
                 ...state,
                 medias: filterMedies,
@@ -51,4 +51,3 @@ export default (state = initialState, action) => {
         return state;
     }
 }
-

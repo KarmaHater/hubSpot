@@ -1,15 +1,51 @@
-export function updateFilters (filters, filter, allMedias) {
-    if (filter.checked === true) {
-        return filters.concat([filter.value])
-    } else {
-       _.remove(filters, function(f) {
-          return f === filter.value;
-        });
-       return filters;
+export default class Filter {
+    static updateFilters (filters, filter, allMedias) {
+        if (filter.checked === true) {
+            return filters.concat([filter.value])
+        } else {
+           _.remove(filters, function(f) {
+              return f === filter.value;
+            });
+           return filters;
+        }
+    }
+
+    static updateMedias (filters, medias) {
+        var newMedias = medias;
+
+        if (filters.length === 0) {
+            return medias;
+        }
+
+        //filter by media
+        const mediaFilters = filters.filter(function(f) {
+            return f === 'book' || f === 'movie';
+        }.bind(this))
+
+        var newMedias = updateMedia(filterTypeYear, mediaFilters, newMedias, 'type');
+
+        //filter by year
+        const yearFilters = filters.filter(function(f) {
+            return /^\d+$/.test(f)
+        })
+
+        var newMedias = updateMedia(filterTypeYear, yearFilters, newMedias, 'year');
+
+        // //filter by genre
+        const genreFilters = filters.filter(function(f) {
+            return !/^\d+$/.test(f) && f !== 'book' && f !== 'movie';
+        })
+
+        const genres = filterGenre(genreFilters, newMedias)
+        newMedias = [];
+        newMedias.push(genres);
+
+        return _.uniq(newMedias[0]);
     }
 }
 
-export function filterMedia(filters, medias, type) {
+//better name for this function
+export function filterTypeYear(filters, medias, type) {
     const mediaResults = [];
     for (var i = 0; i < medias.length; i++) {
         for (var f = 0; f < filters.length; f++) {
@@ -43,7 +79,7 @@ export function filterGenre(filters, medias) {
     }
 }
 
-export function setAllVisibleMedia(filterFunction, filters, medias, type) {
+export function updateMedia(filterFunction, filters, medias, type) {
     var results = [];
     if (filters.length > 0) {
         if (type) {
@@ -54,37 +90,4 @@ export function setAllVisibleMedia(filterFunction, filters, medias, type) {
     } else {
         return medias;
     }
-}
-
-export function setAllVisibleMedies (filters, medias) {
-    var newMedias = medias;
-
-    if (filters.length === 0) {
-        return medias;
-    }
-
-    //filter by media
-    const mediaFilters = filters.filter(function(f) {
-        return f === 'book' || f === 'movie';
-    }.bind(this))
-
-    var newMedias = setAllVisibleMedia(filterMedia, mediaFilters, newMedias, 'type');
-
-    //filter by year
-    const yearFilters = filters.filter(function(f) {
-        return /^\d+$/.test(f)
-    })
-
-    var newMedias = setAllVisibleMedia(filterMedia, yearFilters, newMedias, 'year');
-
-    // //filter by genre
-    const genreFilters = filters.filter(function(f) {
-        return !/^\d+$/.test(f) && f !== 'book' && f !== 'movie';
-    })
-
-    const genres = filterGenre(genreFilters, newMedias)
-    newMedias = [];
-    newMedias.push(genres);
-
-    return _.uniq(newMedias[0]);
 }
