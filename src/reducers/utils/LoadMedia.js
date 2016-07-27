@@ -1,3 +1,4 @@
+import _ from 'lodash';
 export default class LoadMedia {
 	static genres (medias) {
 	    const genres = medias.map((m) => m.genre)

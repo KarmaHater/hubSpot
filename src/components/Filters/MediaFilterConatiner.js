@@ -8,7 +8,7 @@ export default class MediaContainer extends React.Component {
         filterType: React.PropTypes.string.isRequired
     }
 
-    unClear(){ 
+    clear(){ 
         var w = document.getElementsByTagName('input'); 
         for(var i = 0; i < w.length; i++){ 
             if(w[i].type=='text'){ 
@@ -18,7 +18,7 @@ export default class MediaContainer extends React.Component {
     } 
 
     onClick = (filter) => {
-        this.unClear();
+        this.clear();
         this.props.actions.filterMedia(filter)
     }
 
