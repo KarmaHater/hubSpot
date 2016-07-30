@@ -1,4 +1,4 @@
-import * as JokeConstants from './../constants/Constants.js';
+import * as JokeConstants from '../constants/Constants.js';
 
 const initialState = {
     joke: 'Click Button to see a new joke'

@@ -4,7 +4,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, Route, hashHistory } from 'react-router';
 import store from '../store.js';
-import Container from './Container';
+import Container from './container';
 
 const routes = <Route>
 	<Route path="/" component={Container}/>

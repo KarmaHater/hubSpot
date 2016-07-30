@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './../styles/Media.scss';
+import './Media.scss';
 
 export default class Media extends React.Component {
 

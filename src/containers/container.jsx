@@ -2,15 +2,15 @@ import React, { Component, PropTypes } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import * as MediaActions from './../actions/MediaActions.js';
-import * as JokeActions from './../actions/JokeActions.js';
+import * as MediaActions from '../actions/MediaActions.js';
+import * as JokeActions from '../actions/JokeActions.js';
 
-import Header from './Header.js';
-import MediaContainer from './MediaContainer.js';
-import ContentSlot from './ContentSlot.js';
-import DropDownFilterContainer from './Filters/DropDownFilterContainer.js';
-import MediaFilterContainer from './Filters/MediaFilterConatiner.js';
-import SearchFilter from './Filters/SearchFilter.js';
+import Header from '../components/header/Header.js';
+import MediaContainer from '../components/MediaContainer.js';
+import ContentSlot from '../components/content-slot/ContentSlot.js';
+import DropDownFilterContainer from '../components/Filters/DropDownFilterContainer.js';
+import MediaFilterContainer from '../components/Filters/MediaFilterConatiner.js';
+import SearchFilter from '../components/Filters/SearchFilter.js';
 
 class Container extends Component {
     render() {

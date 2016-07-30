@@ -1,7 +1,7 @@
 import React from 'react'
-import JokeButton from './JokeButton.js';
+import JokeButton from '../joke-button/JokeButton.js';
 import Classnames from 'classnames';
-import './../styles/ContentSlot.scss';
+import './ContentSlot.scss';
 
 export default class ContentSlot extends React.Component {
 

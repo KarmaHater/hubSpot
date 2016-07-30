@@ -1,5 +1,5 @@
 import React from 'react';
-import './../styles/JokeButton.scss';
+import './JokeButton.scss';
 
 export default class JokeButton extends React.Component {
 
