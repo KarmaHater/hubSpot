@@ -1,7 +1,7 @@
 var path = require("path");
 module.exports = {
   devtool: 'inline-source-map',
-  entry: './src/components/app.jsx',
+  entry: './src/containers/app.jsx',
   output: {
     path: path.resolve(__dirname, "build"),
     publicPath: "/",
@@ -20,7 +20,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style!css!sass'
-      },
+      },c
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
