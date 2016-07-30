@@ -1,1 +1,1 @@
-web: node /components/app.jsx
+npm onweb: node /components/app.jsx
