@@ -1,10 +1,9 @@
-import React from 'react'
-import Classnames from 'classnames';
+import React, { Component, PropTypes } from 'react'
 import './../../styles/DropDownFilter.scss';
 
-export default class DropDownFilter extends React.Component {
+export default class DropDownFilter extends Component {
 
-	static propTypes = {
+	static PropTypes = {
 		text: React.PropTypes.string.isRequired
 	}
 
@@ -28,10 +27,7 @@ export default class DropDownFilter extends React.Component {
     }
 
     render() {
-    	const {
-    		text,
-            onClick
-    	} = this.props;
+    	const { text } = this.props;
 
         return (
             <div>
