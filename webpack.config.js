@@ -1,7 +1,7 @@
 var path = require("path");
 module.exports = {
   devtool: 'inline-source-map',
-  entry: './components/app.jsx',
+  entry: './src/components/app.jsx',
   output: {
     path: path.resolve(__dirname, "build"),
     publicPath: "/",

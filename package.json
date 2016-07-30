@@ -4,7 +4,7 @@
   "description": "refugee app for the slingshot project at zalando",
   "main": "index.js",
   "scripts": {
-    "test": " ",
+    "test": "mocha --require babel-core/register",
     "start": "webpack-dev-server --hot --progress --colors",
     "build": "webpack --progress --colors"
   },

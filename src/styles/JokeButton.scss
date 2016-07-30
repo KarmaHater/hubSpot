@@ -1,0 +1,29 @@
+@import url('./utils/common.scss');
+@import url('./utils/colors.scss');
+
+$headline-color: #1E90FF;
+
+.api-link {
+  font-size: 14px;
+  padding: 50px 0;
+  background-color: $headline-color;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  right: 100px;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .api-link {
+    margin: 10px auto 0 auto;
+    width: 220px;
+    right: 0;
+    top: 20px;
+    position: relative
+  }
+}
