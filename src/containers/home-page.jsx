@@ -1,16 +1,16 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import * as MediaActions from '../actions/MediaActions.js';
-import * as JokeActions from '../actions/JokeActions.js';
+import * as MediaActions from '../actions/media-actions.js';
+import * as JokeActions from '../actions/joke-actions.js';
 
-import Header from '../components/header/Header.js';
-import MediaContainer from '../components/MediaContainer.js';
-import ContentSlot from '../components/content-slot/ContentSlot.js';
-import DropDownFilterContainer from '../components/Filters/DropDownFilterContainer.js';
-import MediaFilterContainer from '../components/Filters/MediaFilterConatiner.js';
-import SearchFilter from '../components/Filters/SearchFilter.js';
+import Header from '../components/header/header.js';
+import MediaContainer from '../components/joke-button/media-container.js';
+import ContentSlot from '../components/content-slot/content-slot.js';
+import DropDownFilterContainer from '../components/filters/dropdown-filter-container.js';
+import MediaFilterContainer from '../components/filters/media-filter-conatiner.js';
+import SearchFilter from '../components/filters/search-filter.js';
 
 import {Swapper, Swap} from 'swap'
 
@@ -18,35 +18,35 @@ import {Swapper, Swap} from 'swap'
 class Container extends Component {
     render() {
         const {
-          genres,
-          medias,
-          mediaActions,
-          joke,
-          jokeActions,
-          years
+            genres,
+            medias,
+            mediaActions,
+            joke,
+            jokeActions,
+            years
         } = this.props;
 
         return (
             <div>
-    
+
                 <Header headline={"Exercise - Testimonial Block"}/>
                 <ContentSlot content={"content"}
                              showLink={false}/>
 
                 <Header headline={"Exercise - CTA Quote"}/>
                 <ContentSlot content={joke}
-                             actions={jokeActions}  
+                             actions={jokeActions}
                              showLink={true}/>
 
                 <SearchFilter actions={mediaActions}/>
 
                 <DropDownFilterContainer filters={genres}
                                          filterType={'genres'}
-                                         actions={mediaActions} />
+                                         actions={mediaActions}/>
 
                 <DropDownFilterContainer filters={years}
                                          filterType={'years'}
-                                         actions={mediaActions} />                         
+                                         actions={mediaActions}/>
 
                 <MediaFilterContainer filterType={'book'}
                                       actions={mediaActions}/>

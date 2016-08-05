@@ -1,6 +1,6 @@
 import React from 'react';
-import Movie from './media/Media.js';
-import './media/Media.scss';
+import Movie from '../media/media.js';
+import '../media/media.scss';
 
 function renderMovies (medias) {
     return medias.map(function (media, i) {

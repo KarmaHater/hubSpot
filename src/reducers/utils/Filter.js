@@ -1,5 +1,5 @@
 export default class Filter {
-    static setFilters (filters, filter, allMedias) {
+    static setFilters(filters, filter, allMedias) {
         if (filter.checked === true) {
             return filters.concat([filter.value]);
         } else {
@@ -8,7 +8,7 @@ export default class Filter {
         }
     }
 
-    static setMedias (filters, medias) {
+    static setMedias(filters, medias) {
         var newMedias = medias;
 
         if (filters.length === 0) {
@@ -54,7 +54,7 @@ export function filterTypeYear(filters, medias, type) {
 export function filterGenre(filters, medias) {
     const genreResults = [];
     if (filters.length > 0) {
- 
+
         for (var i = 0; i < medias.length; i++) {
             for (var f = 0; f < filters.length; f++) {
                 let media = medias[i];

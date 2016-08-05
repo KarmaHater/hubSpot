@@ -1,7 +1,7 @@
 import React from 'react';
-import DropDownFilter from './DropDownFilter';
+import DropDownFilter from './dropdown-filter';
 import Classnames from 'classnames';
-import './../../styles/DropDownFilter.scss';
+import '../../styles/dropdown-filter.scss';
 
 export default class DropDownFilterContainer extends React.Component {
     static propTypes = {

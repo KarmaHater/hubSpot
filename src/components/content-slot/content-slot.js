@@ -1,7 +1,7 @@
 import React from 'react'
-import JokeButton from '../joke-button/JokeButton.js';
+import JokeButton from '../joke-button/joke-button.js';
 import Classnames from 'classnames';
-import './ContentSlot.scss';
+import './content-slot.scss';
 
 export default class ContentSlot extends React.Component {
 
@@ -16,8 +16,8 @@ export default class ContentSlot extends React.Component {
 
     render() {
         const {
-        content,
-        showLink
+            content,
+            showLink
         } = this.props;
 
         const containerClass = Classnames({'slot-container-one': !showLink}, {'slot-container-two': showLink});

@@ -1,21 +1,21 @@
-import React, { Component, PropTypes } from 'react'
+import React, {Component, PropTypes} from 'react'
 import Classnames from 'classnames';
-import './../../styles/DropDownFilter.scss';
+import '../../styles/dropdown-filter.scss';
 
 export default class DropDownFilter extends Component {
 
-	static PropTypes = {
-		text: React.PropTypes.string.isRequired
-	}
+    static PropTypes = {
+        text: React.PropTypes.string.isRequired
+    }
 
-    unClear() { 
-        var w = document.getElementsByTagName('input'); 
-        for (var i = 0; i < w.length; i++) { 
-            if (w[i].type=='text') { 
-                w[i].value= ''; 
+    unClear() {
+        var w = document.getElementsByTagName('input');
+        for (var i = 0; i < w.length; i++) {
+            if (w[i].type == 'text') {
+                w[i].value = '';
             }
         }
-    } 
+    }
 
     onClick = () => {
         this.unClear();
@@ -29,15 +29,15 @@ export default class DropDownFilter extends Component {
 
     render() {
         const {
-    		text,
+            text,
             onClick
-    	} = this.props;
+        } = this.props;
 
         return (
             <div>
                 <label onClick={this.onClick}>
                     {text}
-                    <input type='checkbox' value={text} ref={text} />
+                    <input type='checkbox' value={text} ref={text}/>
                 </label>
             </div>
         );

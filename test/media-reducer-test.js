@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import reducer from '../src/reducers/MediaReducer';
-import * as Constants from '../src/constants/Constants.js';
+import reducer from '../src/reducers/media-reducer';
+import * as Constants from '../src/constants/constants.js';
 
 describe('Media Reducer', () => {
 	let medias = [

@@ -1,5 +1,5 @@
 import React from 'react';
-import MediaFilter from './MediaFilter';
+import MediaFilter from './media-filter';
 import Classnames from 'classnames';
 
 export default class MediaContainer extends React.Component {
@@ -8,14 +8,14 @@ export default class MediaContainer extends React.Component {
         filterType: React.PropTypes.string.isRequired
     }
 
-    clear() { 
-        var w = document.getElementsByTagName('input'); 
-        for (var i = 0; i < w.length; i++) { 
-            if (w[i].type=='text') { 
-                w[i].value= ''; 
+    clear() {
+        var w = document.getElementsByTagName('input');
+        for (var i = 0; i < w.length; i++) {
+            if (w[i].type == 'text') {
+                w[i].value = '';
             }
         }
-    } 
+    }
 
     onClick = (filter) => {
         this.clear();
