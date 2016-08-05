@@ -6,14 +6,14 @@ const initialState = {
 
 
 export default (state = initialState, action) => {
-  switch(action.type) {
+    switch (action.type) {
     case JokeConstants.FETCH_NEW_JOKE:
-      return {
-      	...state,
-      	joke: action.joke
-      };
+        return {
+      	                                                        ...state,
+      	                                                        joke: action.joke
+        };
     default:
-      return state;
-  }
-}
+        return state;
+    }
+};
 

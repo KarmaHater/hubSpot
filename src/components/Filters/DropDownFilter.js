@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import Classnames from 'classnames';
 import './../../styles/DropDownFilter.scss';
 
 export default class DropDownFilter extends Component {
@@ -7,10 +8,10 @@ export default class DropDownFilter extends Component {
 		text: React.PropTypes.string.isRequired
 	}
 
-    unClear(){ 
+    unClear() { 
         var w = document.getElementsByTagName('input'); 
-        for(var i = 0; i < w.length; i++){ 
-            if(w[i].type=='text'){ 
+        for (var i = 0; i < w.length; i++) { 
+            if (w[i].type=='text') { 
                 w[i].value= ''; 
             }
         }
@@ -27,7 +28,10 @@ export default class DropDownFilter extends Component {
     }
 
     render() {
-    	const { text } = this.props;
+        const {
+    		text,
+            onClick
+    	} = this.props;
 
         return (
             <div>
@@ -36,6 +40,6 @@ export default class DropDownFilter extends Component {
                     <input type='checkbox' value={text} ref={text} />
                 </label>
             </div>
-        )
+        );
     }
 }

@@ -3,8 +3,8 @@ export default class Filter {
         if (filter.checked === true) {
             return filters.concat([filter.value]);
         } else {
-           _.remove(filters, (f) => f === filter.value);
-           return filters;
+            _.remove(filters, (f) => f === filter.value);
+            return filters;
         }
     }
 
@@ -18,7 +18,7 @@ export default class Filter {
         //filter by type
         const mediaFilters = filters.filter((f) => {
             return f === 'book' || f === 'movie';
-        })
+        });
 
         var newMedias = updateMedia(filterTypeYear, mediaFilters, newMedias, 'type');
 
@@ -44,7 +44,7 @@ export function filterTypeYear(filters, medias, type) {
     for (var i = 0; i < medias.length; i++) {
         for (var f = 0; f < filters.length; f++) {
             if (filters[f] === medias[i][type]) {
-                mediaResults.push(medias[i])
+                mediaResults.push(medias[i]);
             }
         }
     }
@@ -62,7 +62,7 @@ export function filterGenre(filters, medias) {
                 let filter = filters[f];
                 for (var g = 0; g < mediaGenres.length; g++) {
                     if (filter === mediaGenres[g]) {
-                        genreResults.push(media)
+                        genreResults.push(media);
                     }
                 }
             }
@@ -77,7 +77,7 @@ export function updateMedia(filterFunction, filters, medias, type) {
     var results = [];
     if (filters.length > 0) {
         if (type) {
-            let newMedies = filterFunction(filters, medias, type)
+            let newMedies = filterFunction(filters, medias, type);
             results.push(newMedies);
         }
         return results[0];

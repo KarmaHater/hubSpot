@@ -14,38 +14,38 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-    switch(action.type) {
-        case Constants.LOAD_MEDIAS:
-            const medias = action.movies;
-            const genres = LoadMedia.genres(medias);
-            const years = LoadMedia.years(medias);
-            const allMedias = medias;
-            return {
-                ...state,
-                medias,
-                allMedias,
-                genres,
-                years
-            };
-            break;
-        case Constants.FILTER_MEDIA:
-            const filters = Filter.setFilters(state.filters, action.data);
-            const filterMedies = Filter.setMedias(filters, state.allMedias);
-            return {
-                ...state,
-                medias: filterMedies,
-                filters: filters
-            };
-            break;
-        case Constants.SEARCH_MEDIA:
-            let searchMedias = Search.setMedias(action.data, state.allMedias);
-            return {
-                ...state,
-                medias: searchMedias,
-                searchFilter: action.data
-            };
-            break;
-        default:
+    switch (action.type) {
+    case Constants.LOAD_MEDIAS:
+        const medias = action.movies;
+        const genres = LoadMedia.genres(medias);
+        const years = LoadMedia.years(medias);
+        const allMedias = medias;
+        return {
+            ...state,
+            medias,
+            allMedias,
+            genres,
+            years
+        };
+        break;
+    case Constants.FILTER_MEDIA:
+        const filters = Filter.setFilters(state.filters, action.data);
+        const filterMedies = Filter.setMedias(filters, state.allMedias);
+        return {
+            ...state,
+            medias: filterMedies,
+            filters: filters
+        };
+        break;
+    case Constants.SEARCH_MEDIA:
+        let searchMedias = Search.setMedias(action.data, state.allMedias);
+        return {
+            ...state,
+            medias: searchMedias,
+            searchFilter: action.data
+        };
+        break;
+    default:
         return state;
     }
-}
+};

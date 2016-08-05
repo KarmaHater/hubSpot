@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Classnames from 'classnames';
     
 export default class MediaFilter extends React.Component {
@@ -13,7 +13,7 @@ export default class MediaFilter extends React.Component {
             checked: this.refs[this.props.filterType].checked
         };
 
-    	this.props.onClick(filter);
+    	                                        this.props.onClick(filter);
     }
 
     render() {
@@ -27,6 +27,6 @@ export default class MediaFilter extends React.Component {
                 <input ref={filterType} type="checkbox" value={filterType} ref={filterType} onClick={this.onClick}/> 
                 <lable>{filterType}</lable>
         	</div>
-        )
+        );
     }
 }

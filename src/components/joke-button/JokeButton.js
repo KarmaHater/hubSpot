@@ -8,7 +8,7 @@ export default class JokeButton extends React.Component {
     }
 
     handleClick() {
-        this.props.actions.fetchNewJoke()
+        this.props.actions.fetchNewJoke();
     }
 
     render() {
@@ -16,6 +16,6 @@ export default class JokeButton extends React.Component {
             <div className='api-link'>
                 <a onClick={()=> this.handleClick()}>Tell Me More</a>
             </div>
-        )
+        );
     }
 }

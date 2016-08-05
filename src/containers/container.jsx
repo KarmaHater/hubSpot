@@ -12,6 +12,7 @@ import DropDownFilterContainer from '../components/Filters/DropDownFilterContain
 import MediaFilterContainer from '../components/Filters/MediaFilterConatiner.js';
 import SearchFilter from '../components/Filters/SearchFilter.js';
 
+
 class Container extends Component {
     render() {
         const {
@@ -25,6 +26,7 @@ class Container extends Component {
 
         return (
             <div>
+    
                 <Header headline={"Exercise - Testimonial Block"}/>
                 <ContentSlot content={"content"}
                              showLink={false}/>

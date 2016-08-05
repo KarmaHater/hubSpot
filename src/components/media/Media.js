@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import './Media.scss';
 
@@ -14,9 +14,9 @@ export default class Media extends React.Component {
 
     rendersGenres(genre) {
         return genre.map(function (g, i) {
-            const comma = genre.length - 1 === i ? '' : ','
-            return <span key={i} className="media-genre">{`${g}${comma} `}</span>
-        })
+            const comma = genre.length - 1 === i ? '' : ',';
+            return <span key={i} className="media-genre">{`${g}${comma} `}</span>;
+        });
     }
 
     render() {
@@ -26,7 +26,7 @@ export default class Media extends React.Component {
             poster,
             genre,
             type
-        } = this.props.media
+        } = this.props.media;
 
         return (
             <div className='media-container '>
@@ -39,6 +39,6 @@ export default class Media extends React.Component {
                     genre: {this.rendersGenres(genre)}
                 </div>
             </div>
-        )
+        );
     }
 }

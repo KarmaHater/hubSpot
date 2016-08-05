@@ -10,7 +10,7 @@ export default class DropDownFilterContainer extends React.Component {
     }
 
     onClick = (filter) => {
-        this.props.actions.filterMedia(filter)
+        this.props.actions.filterMedia(filter);
     }
 
     render() {
@@ -21,8 +21,8 @@ export default class DropDownFilterContainer extends React.Component {
         } = this.props;
 
         const filtersComponents = filters.map((f, i) => {
-           return <DropDownFilter key={i} text={f} onClick={this.onClick.bind(this)}/>;
-        })
+            return <DropDownFilter key={i} text={f} onClick={this.onClick.bind(this)}/>;
+        });
         return (
             <div className='dropdown'>
                 <div>{filterType} v</div>
@@ -30,6 +30,6 @@ export default class DropDownFilterContainer extends React.Component {
                     {filtersComponents}
                 </div>
             </div>
-        )
+        );
     }
 }

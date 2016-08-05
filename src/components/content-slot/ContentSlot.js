@@ -11,7 +11,7 @@ export default class ContentSlot extends React.Component {
     }
 
     renderLink() {
-        return <JokeButton actions={this.props.actions}/>
+        return <JokeButton actions={this.props.actions}/>;
     }
 
     render() {
@@ -29,6 +29,6 @@ export default class ContentSlot extends React.Component {
                     {content}
                 </div>
             </div>
-        )
+        );
     }
 }

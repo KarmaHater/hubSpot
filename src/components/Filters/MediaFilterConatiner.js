@@ -1,5 +1,5 @@
-import React from 'react'
-import MediaFilter from './MediaFilter'
+import React from 'react';
+import MediaFilter from './MediaFilter';
 import Classnames from 'classnames';
 
 export default class MediaContainer extends React.Component {
@@ -8,10 +8,10 @@ export default class MediaContainer extends React.Component {
         filterType: React.PropTypes.string.isRequired
     }
 
-    clear(){ 
+    clear() { 
         var w = document.getElementsByTagName('input'); 
-        for(var i = 0; i < w.length; i++){ 
-            if(w[i].type=='text'){ 
+        for (var i = 0; i < w.length; i++) { 
+            if (w[i].type=='text') { 
                 w[i].value= ''; 
             }
         }
@@ -19,7 +19,7 @@ export default class MediaContainer extends React.Component {
 
     onClick = (filter) => {
         this.clear();
-        this.props.actions.filterMedia(filter)
+        this.props.actions.filterMedia(filter);
     }
 
     render() {
@@ -27,6 +27,6 @@ export default class MediaContainer extends React.Component {
             <div>
                 <MediaFilter filterType={this.props.filterType} onClick={this.onClick}/>
             </div>
-        )
+        );
     }
 }

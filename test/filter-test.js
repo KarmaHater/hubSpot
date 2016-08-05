@@ -1,4 +1,4 @@
-var expect = require('chai').expect;
+import { expect } from 'chai';
 import { filterTypeYear, filterGenre } from '../src/reducers/utils/Filter.js';
 
 describe('Reducers utils Filter', () => {
@@ -33,3 +33,5 @@ describe('Reducers utils Filter', () => {
         expect(result.length).to.eql(1)
     });
 });
+
+// missing two methods 

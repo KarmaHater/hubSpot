@@ -4,8 +4,12 @@
   "description": "refugee app for the slingshot project at zalando",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
     "test": "mocha --require babel-core/register",
     "start": "webpack-dev-server --hot --progress --colors",
+    "stylelint": "./node_modules/.bin/stylelint src/styles/*.css",
+    "stylelint:fix": "./node_modules/.bin/stylefmt -R src/styles/",
     "build": "webpack --progress --colors"
   },
   "keywords": [
@@ -38,6 +42,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.1.21",
+    "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
@@ -48,6 +53,12 @@
     "mocha": "^2.5.3",
     "node-sass": "^3.4.2",
     "redux-logger": "^2.6.1",
-    "sass-loader": "^3.1.2"
+    "sass-loader": "^3.1.2",
+    "eslint": "^3.2.2",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-react": "^6.0.0",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "swap": "git+https://github.com/KarmaHater/swap.git"
   }
 }
