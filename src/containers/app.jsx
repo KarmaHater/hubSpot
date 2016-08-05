@@ -4,10 +4,10 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, Route, hashHistory } from 'react-router';
 import store from '../store.js';
-import Container from './container';
+import HomePage from './home-page';
 
 const routes = <Route>
-	<Route path="/" component={Container}/>
+	<Route path="/" component={HomePage}/>
 </Route>;
 
 let reactElement = document.getElementById('react')

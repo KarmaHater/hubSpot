@@ -12,6 +12,8 @@ import DropDownFilterContainer from '../components/Filters/DropDownFilterContain
 import MediaFilterContainer from '../components/Filters/MediaFilterConatiner.js';
 import SearchFilter from '../components/Filters/SearchFilter.js';
 
+import {Swapper, Swap} from 'swap'
+
 
 class Container extends Component {
     render() {
