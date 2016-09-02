@@ -17,8 +17,9 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case Constants.LOAD_MEDIAS:
             const medias = action.movies;
-            const genres = LoadMedia.genres(medias);
-            const years = LoadMedia.years(medias);
+            const LoadMedias = LoadMedia()
+            const genres = LoadMedias.genres(medias);
+            const years = LoadMedias.years(medias);
             const allMedias = medias;
             return {
                 ...state,
