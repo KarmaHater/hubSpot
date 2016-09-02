@@ -1,5 +1,8 @@
+
+import _ from 'lodash';
+
 export default class Filter {
-    static setFilters(filters, filter, allMedias) {
+    static setFilters(filters, filter) {
         if (filter.checked === true) {
             return filters.concat([filter.value]);
         } else {

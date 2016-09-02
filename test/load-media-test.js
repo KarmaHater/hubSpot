@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
-import LoadMedia from '../src/reducers/utils/LoadMedia.js';
+import Media from '../src/reducers/utils/LoadMedia.js';
 
-describe('Reducers utils Load Media', () => {
+describe('Reducers utils Media', () => {
 	let medias = [
         {
             "title": "Raiders of the Lost Ark",
@@ -19,13 +19,13 @@ describe('Reducers utils Load Media', () => {
         }];
 
     it('only return media\'s genres', () => {
-    	let genres = LoadMedia.genres(medias)
+    	let genres = Media.filter(medias, "genre")
     	let result = ["action", "comedy", "crime"];
     	expect(genres).to.eql(result)
     });
 
     it('only return media\'s years', () => {
-    	let years = LoadMedia.years(medias)
+    	let years = Media.filter(medias, "year")
     	let result = ["1981", "2010"];
     	expect(years).to.eql(result)
     });

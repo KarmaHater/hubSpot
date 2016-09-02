@@ -1,7 +1,6 @@
-import _ from 'lodash';
 import * as Constants from '../constants/constants.js';
 import Filter from './utils/Filter.js';
-import LoadMedia from './utils/LoadMedia.js';
+import Media from './utils/LoadMedia.js';
 import Search from './utils/Search.js';
 
 const initialState = {
@@ -17,9 +16,8 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case Constants.LOAD_MEDIAS:
             const medias = action.movies;
-            const LoadMedias = LoadMedia()
-            const genres = LoadMedias.genres(medias);
-            const years = LoadMedias.years(medias);
+            const genres = Media.filter(medias, 'genre');
+            const years = Media.filter(medias, 'year');
             const allMedias = medias;
             return {
                 ...state,
