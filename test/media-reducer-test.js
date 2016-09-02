@@ -27,17 +27,16 @@ describe('Media Reducer', () => {
 	it('should set medias, years, genres and allMedia on LOAD_MEDIAS', () => {
 		let action = {
 			type: Constants.LOAD_MEDIAS,
-			data: medias
+			movies: medias
 		};
-		let newState = reducer(state, action);
 
+		let newState = reducer(state, action);
 		expect(newState.medias).to.eql(medias);
 		expect(newState.allMedias).to.eql(medias);
 		expect(newState.years).to.eql(["1981", "2010"]);
 		expect(newState.genres).to.eql(["action", "comedy"]);
 	})
-
-
+    //
 	it('should set filter and filter medias by correctly FILTER_MEDIA', () => {
 		let action = {
 			type: Constants.FILTER_MEDIA,
